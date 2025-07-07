@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarthak Katta - Full Stack Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'cyber-pink': '#ff007f',
+            'neon-aqua': '#00ffff',
+            'electric-orange': '#ff5e00',
+            'dark-purple': '#0c0c3a',
+            'mid-purple': '#1c1c5e',
+            'deep-purple': '#35145e'
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            syncopate: ['Syncopate', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syncopate:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    .glow {
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
+    }
+    
+    .neon-text {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-dark-purple via-mid-purple to-deep-purple text-white min-h-screen">
+  
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 glass-card py-4 px-6 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold font-orbitron neon-text">SK</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="hover:text-neon-aqua transition">About</a>
+        <a href="#skills" class="hover:text-neon-aqua transition">Skills</a>
+        <a href="#projects" class="hover:text-neon-aqua transition">Projects</a>
+        <a href="#experience" class="hover:text-neon-aqua transition">Experience</a>
+        <a href="#contact" class="hover:text-neon-aqua transition">Contact</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+      <!-- Particle Background (Placeholder) -->
+      <div class="absolute inset-0 z-0 opacity-20">
+        <img src="ss.jpg" alt="Abstract neon particle background with glowing pink and aqua dots" class="w-full h-full object-cover" />
+      </div>
+      
+      <div class="text-center z-10 px-4">
+        <h1 id="typewriter" class="text-5xl md:text-7xl font-bold font-orbitron mb-4 neon-text"></h1>
+        <p class="text-lg md:text-2xl font-syncopate mb-8 pulse-animation text-neon-aqua">Full Stack Developer</p>
+        <a href="#projects" class="bg-cyber-pink text-white px-8 py-3 rounded-full font-bold text-lg glow hover:scale-105 transition-transform inline-block">Explore My Work</a>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 animate-bounce">
+        <div class="flex flex-col items-center">
+          <span class="text-sm mb-2">Scroll Down</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 13l5 5 5-5"></path>
+            <path d="M7 6l5 5 5-5"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 md:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold font-orbitron mb-12 text-center neon-text">About Me</h2>
+        
+        <div class="glass-card rounded-2xl p-8 shadow-lg">
+          <p class="text-lg mb-6">
+            <span class="text-neon-aqua text-2xl">"</span>
+            I'm a passionate Full Stack Developer with a knack for turning ideas into responsive, interactive digital products. With expertise in both frontend and backend technologies, I bridge the gap between design and functionality.
+            <span class="text-neon-aqua text-2xl">"</span>
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div class="glass-card rounded-xl p-6 hover:transform hover:-translate-y-2 transition-transform">
+              <h3 class="text-xl font-bold font-syncopate mb-4 text-cyber-pink">Frontend Expertise</h3>
+              <p>Creating pixel-perfect, responsive interfaces with modern React, Vue, and animation libraries.</p>
+            </div>
+            
+            <div class="glass-card rounded-xl p-6 hover:transform hover:-translate-y-2 transition-transform">
+              <h3 class="text-xl font-bold font-syncopate mb-4 text-cyber-pink">Backend Proficiency</h3>
+              <p>Building scalable APIs and database architectures with Node.js, Express, and MongoDB.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 md:px-8 bg-gradient-to-r from-dark-purple/50 to-deep-purple/50">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold font-orbitron mb-12 text-center neon-text">Skills & Technologies</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="skill-category glass-card rounded-xl p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold font-syncopate mb-4 text-cyber-pink">Frontend</h3>
+            <ul class="space-y-2">
+              <li class="skill-tag hover:glow">HTML</li>
+              <li class="skill-tag hover:glow">CSS</li>
+              <li class="skill-tag hover:glow">JavaScript</li>
+              <li class="skill-tag hover:glow">React</li>
+              <li class="skill-tag hover:glow">Next.js</li>
+              <li class="skill-tag hover:glow">Tailwind CSS</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category glass-card rounded-xl p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold font-syncopate mb-4 text-cyber-pink">Backend</h3>
+            <ul class="space-y-2">
+              <li class="skill-tag hover:glow">Node.js</li>
+              <li class="skill-tag hover:glow">Express</li>
+              <li class="skill-tag hover:glow">MongoDB</li>
+              <li class="skill-tag hover:glow">Firebase</li>
+              <li class="skill-tag hover:glow">REST APIs</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category glass-card rounded-xl p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold font-syncopate mb-4 text-cyber-pink">Tools</h3>
+            <ul class="space-y-2">
+              <li class="skill-tag hover:glow">Git</li>
+              <li class="skill-tag hover:glow">VS Code</li>
+              <li class="skill-tag hover:glow">Postman</li>
+              <li class="skill-tag hover:glow">Figma</li>
+              <li class="skill-tag hover:glow">Docker</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category glass-card rounded-xl p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold font-syncopate mb-4 text-cyber-pink">Soft Skills</h3>
+            <ul class="space-y-2">
+              <li class="skill-tag hover:glow">Communication</li>
+              <li class="skill-tag hover:glow">Leadership</li>
+              <li class="skill-tag hover:glow">Problem Solving</li>
+              <li class="skill-tag hover:glow">Team Collaboration</li>
+              <li class="skill-tag hover:glow">Agile Methodologies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 md:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold font-orbitron mb-12 text-center neon-text">Featured Projects</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card glass-card rounded-2xl overflow-hidden hover:transform hover:-translate-y-2 transition-transform">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-syncopate mb-3 text-electric-orange">E-Commerce Platform</h3>
+              <p class="mb-4">A full-featured online store with cart functionality, payment processing, and admin dashboard.</p>
+              
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag bg-cyber-pink/30">React</span>
+                <span class="tech-tag bg-cyber-pink/30">Node.js</span>
+                <span class="tech-tag bg-cyber-pink/30">MongoDB</span>
+                <span class="tech-tag bg-cyber-pink/30">Stripe API</span>
+              </div>
+              
+              <div class="flex space-x-4">
+                <a href="#" class="project-link hover:text-neon-aqua">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  Code
+                </a>
+                <a href="https://skprime07.github.io/Cara-Brand/" class="project-link hover:text-neon-aqua">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="project-card glass-card rounded-2xl overflow-hidden hover:transform hover:-translate-y-2 transition-transform">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-syncopate mb-3 text-electric-orange">Task Management App</h3>
+              <p class="mb-4">A productivity application with drag-and-drop task organization and team collaboration features.</p>
+              
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag bg-cyber-pink/30">Vue.js</span>
+                <span class="tech-tag bg-cyber-pink/30">Firebase</span>
+                <span class="tech-tag bg-cyber-pink/30">Tailwind</span>
+                <span class="tech-tag bg-cyber-pink/30">Realtime DB</span>
+              </div>
+              
+              <div class="flex space-x-4">
+                <a href="#" class="project-link hover:text-neon-aqua">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  Code
+                </a>
+                <a href="https://skprime07.github.io/onroadUI/" class="project-link hover:text-neon-aqua">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience & Education -->
+    <section id="experience" class="py-20 px-4 md:px-8 bg-gradient-to-r from-dark-purple/50 to-deep-purple/50">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold font-orbitron mb-12 text-center neon-text">Experience & Education</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Experience Timeline -->
+          <div class="glass-card rounded-2xl p-8">
+            <h3 class="text-2xl font-bold font-syncopate mb-8 text-center text-neon-aqua">Professional Journey</h3>
+            
+            <div class="timeline relative pl-8">
+              <!-- Timeline Item 1 -->
+              <div class="timeline-item pb-8 relative">
+                <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-electric-orange border-2 border-white"></div>
+                <span class="timeline-date text-sm text-neon-aqua">May–June 2024</span>
+                <h4 class="text-xl font-bold font-syncopate">Red Symbol Technologies</h4>
+                <p>Full Stack Developer Intern</p>
+              </div>
+              
+              <!-- Timeline Item 2 -->
+              <div class="timeline-item relative">
+                <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-electric-orange border-2 border-white"></div>
+                <span class="timeline-date text-sm text-neon-aqua">May–June 2025</span>
+                <h4 class="text-xl font-bold font-syncopate">Linux World, Jaipur</h4>
+                <p>Software Engineer</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Education -->
+          <div class="glass-card rounded-2xl p-8">
+            <div class="flex items-center mb-6">
+              <div class="flex-shrink-0 mr-4">
+                <img src="https://placehold.co/100" alt="JECRC University logo" class="w-16 h-16 rounded-full" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold font-syncopate">BTech IT</h3>
+                <p class="text-neon-pink">JECRC Jaipur • 2023–2027</p>
+                <p class="text-sm">GPA: 9.11</p>
+              </div>
+            </div>
+            
+            <h4 class="text-lg font-bold font-syncopate mb-4 text-neon-aqua">Achievements</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1 mr-3 text-electric-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <span>Winner of Hackathon 2024 - JECRC</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1 mr-3 text-electric-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <span>Dean's List - Academic Excellence</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Certifications -->
+    <section id="certifications" class="py-20 px-4 md:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold font-orbitron mb-12 text-center neon-text">Certifications</h2>
+        
+        <div class="certifications-slider relative">
+          <div class="flex overflow-x-auto pb-8 gap-6 scrollbar-hide">
+            <!-- Cert 1 -->
+            <div class="cert-card glass-card rounded-xl p-6 flex-shrink-0 w-64 hover:transform hover:rotate-3 transition-transform">
+              <div class="mb-4">
+                <img src="https://placehold.co/200" alt="Full Stack Web Development Certification badge" class="w-full rounded-lg" />
+              </div>
+              <h4 class="font-bold font-syncopate mb-2">Full Stack Web Development</h4>
+              <p class="text-sm">Udemy • 2023</p>
+            </div>
+            
+            <!-- Cert 2 -->
+            <div class="cert-card glass-card rounded-xl p-6 flex-shrink-0 w-64 hover:transform hover:-rotate-3 transition-transform">
+              <div class="mb-4">
+                <img src="https://placehold.co/200" alt="React Certification badge" class="w-full rounded-lg" />
+              </div>
+              <h4 class="font-bold font-syncopate mb-2">Advanced React</h4>
+              <p class="text-sm">Scrimba • 2024</p>
+            </div>
+            
+            <!-- Cert 3 -->
+            <div class="cert-card glass-card rounded-xl p-6 flex-shrink-0 w-64 hover:transform hover:rotate-3 transition-transform">
+              <div class="mb-4">
+                <img src="https://placehold.co/200" alt="Node.js Certification badge" class="w-full rounded-lg" />
+              </div>
+              <h4 class="font-bold font-syncopate mb-2">Node.js Microservices</h4>
+              <p class="text-sm">Coursera • 2024</p>
+            </div>
+            
+            <!-- Cert 4 -->
+            <div class="cert-card glass-card rounded-xl p-6 flex-shrink-0 w-64 hover:transform hover:-rotate-3 transition-transform">
+              <div class="mb-4">
+                <img src="https://placehold.co/200" alt="MongoDB Certification badge" class="w-full rounded-lg" />
+              </div>
+              <h4 class="font-bold font-syncopate mb-2">MongoDB Developer</h4>
+              <p class="text-sm">MongoDB University • 2023</p>
+            </div>
+          </div>
+          
+          <button class="cert-slider-btn absolute top-1/2 left-2 transform -translate-y-1/2 bg-dark-purple rounded-full p-2 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button class="cert-slider-btn absolute top-1/2 right-2 transform -translate-y-1/2 bg-dark-purple rounded-full p-2 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 md:px-8 bg-gradient-to-r from-dark-purple/50 to-deep-purple/50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold font-orbitron mb-12 text-center neon-text">Get In Touch</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-bold font-syncopate mb-6 text-neon-aqua">Contact Information</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mr-4 text-electric-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold">Email</p>
+                  <a href="mailto:sarthakatta2005@gmail.com" class="hover:text-neon-aqua">sarthakatta2005@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mr-4 text-electric-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold">Phone</p>
+                  <a href="tel:+91XXXXXXXXXX" class="hover:text-neon-aqua">+91 XXXXX XXXXX</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mr-4 text-electric-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold">Location</p>
+                  <p>Jaipur, Rajasthan, India</p>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-xl font-bold font-syncopate mt-12 mb-4 text-neon-aqua">Connect With Me</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon hover:text-neon-aqua" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-neon-aqua" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-neon-aqua" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+            </div>
+            
+            <button class="mt-8 bg-electric-orange text-white px-6 py-3 rounded-full font-bold hover:glow transition-all pulse-animation">
+              Download Resume
+            </button>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="glass-card rounded-2xl p-6">
+            <form id="contactForm">
+              <div class="mb-6">
+                <label for="name" class="block mb-2 font-bold">Name</label>
+                <input type="text" id="name" class="w-full bg-dark-purple/50 border border-neon-aqua/30 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-neon-aqua">
+              </div>
+              
+              <div class="mb-6">
+                <label for="email" class="block mb-2 font-bold">Email</label>
+                <input type="email" id="email" class="w-full bg-dark-purple/50 border border-neon-aqua/30 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-neon-aqua">
+              </div>
+              
+              <div class="mb-6">
+                <label for="message" class="block mb-2 font-bold">Message</label>
+                <textarea id="message" rows="5" class="w-full bg-dark-purple/50 border border-neon-aqua/30 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-neon-aqua"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full bg-neon-aqua text-dark-purple font-bold py-3 px-6 rounded-lg hover:transform hover:translate-y-1 transition-transform">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="py-12 px-4 md:px-8 bg-dark-purple">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a href="#" class="text-2xl font-bold font-orbitron">Sarthak Katta</a>
+          <p class="mt-2">Building digital experiences with passion</p>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-neon-aqua">Home</a>
+          <a href="#about" class="hover:text-neon-aqua">About</a>
+          <a href="#projects" class="hover:text-neon-aqua">Projects</a>
+          <a href="#contact" class="hover:text-neon-aqua">Contact</a>
+        </div>
+      </div>
+      
+      <div class="border-t border-neon-aqua/20 mt-8 pt-8 text-center text-sm">
+        <p>© 2024 Sarthak Katta. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-6 right-6 bg-cyber-pink text-white p-3 rounded-full shadow-lg hover:transform hover:-translate-y-1 transition-transform hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+  
+  <script>
+    // Typewriter Effect for Hero Section
+    const typewriterText = "Sarthak Katta";
+    const typewriterElement = document.getElementById('typewriter');
+    
+    let charIndex = 0;
+    function typeWriter() {
+      if (charIndex < typewriterText.length) {
+        typewriterElement.innerHTML += typewriterText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    
+    // Initialize components when DOM loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // Start typewriter effect
+      setTimeout(typeWriter, 500);
+      
+      // Initialize Lucide icons
+      lucide.createIcons();
+      
+      // Back to top button
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.remove('hidden');
+        } else {
+          backToTopBtn.classList.add('hidden');
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }
+        });
+      });
+      
+      // Contact form submission
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Thank you for your message! I will get back to you soon.');
+          this.reset();
+        });
+      }
+      
+      // Initialize Framer Motion animations
+      if (typeof motion !== 'undefined') {
+        // Animate project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach((card, index) => {
+          motion(card).v
+            .initial({ opacity: 0, x: index % 2 === 0 ? -100 : 100 })
+            .animate({ opacity: 1, x: 0 })
+            .transition({ duration: 0.5, delay: index * 0.1 });
+        });
+        
+        // Animate skill tags
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+          motion(tag).v
+            .whileHover({ scale: 1.05, y: -3 })
+            .transition({ duration: 0.2 });
+        });
+      }
+      
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-button');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          const nav = document.querySelector('nav .hidden');
+          if (nav) {
+            nav.classList.toggle('md:flex');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
